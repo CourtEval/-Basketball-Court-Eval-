@@ -1,0 +1,24 @@
+document.getElementById('courtForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    let totalScore = 0;
+    let totalWeight = 0;
+
+    // Example Calculation for Question 1
+    let q1Value = parseFloat(document.getElementById('question1').value);
+    let q1Weight = 1;
+    totalScore += q1Value * q1Weight;
+    totalWeight += q1Weight;
+
+    // Repeat for all questions
+
+    // Example for Question 2
+    let q2Value = parseFloat(document.getElementById('question2').value);
+    let q2Weight = 1;
+    totalScore += q2Value * q2Weight;
+    totalWeight += q2Weight;
+
+    // Calculate final score
+    let finalScore = totalScore / totalWeight;
+    document.getElementById('score').textContent = finalScore.toFixed(2);
+});

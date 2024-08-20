@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Court Evaluation Tool</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="container">
+        <h1>Outdoor Basketball Court Evaluation</h1>
+        <form id="courtForm">
+            <!-- Question 1: Court Size -->
+            <div class="question">
+                <label for="question1">1. Court Size</label>
+                <select id="question1" name="question1">
+                    <option value="5">Full</option>
+                    <option value="4">Half</option>
+                </select>
+            </div>
+            <!-- More questions go here -->
+            <button type="submit">Get Score</button>
+        </form>
+        <div id="scoreDisplay">
+            <h2>Your Score: <span id="score">0</span></h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+</body>
+</html>
